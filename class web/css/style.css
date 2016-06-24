@@ -1,0 +1,36 @@
+.swiper-container { width: 100%; height: 100%;margin-left: auto; margin-right: auto;}
+.swiper-slide {text-align: center;font-size: 18px;background: #fff;}
+
+.head{width: 100%;height: 50vh;position: relative;z-index: 1;}
+  .header{width: 100%;height: 100%;background: url(../img/bg.jpg) no-repeat;background-size: cover;background-position: center;}
+    .list{width: 800px;}
+      .list .swiper-slide{ background-color: transparent;}
+        .list .swiper-slide img{width: 50vh;}
+    .zp{height: 350px;width: 100%;}
+    .swiper-slideV{text-align: center;font-size: 18px;background: #fff;}
+    .Cshow_span{position: relative;z-index: 6; -webkit-text-stroke:1px #f2f2f2;-moz-text-stroke:1px #f2f2f2;text-stroke:1px #f2f2f2;  font-size: 2em; font-weight:bold; background-image: -webkit-gradient(linear, 5 5, 10 bottom, from(rgb(226, 39, 3)), to(rgb(93, 167, 9)));-webkit-background-clip: text;-moz-background-clip: text;background-clip: text; -webkit-text-fill-color: transparent;-moz-text-fill-color: transparent;text-fill-color: transparent;}
+    .Cshow_p{position: relative;z-index: 6;}
+
+.foot{width: 100%;height: 50vh;bottom: 0;position: absolute;}
+  .footer{width: 100%;height: 100%;background: url(../img/bg1.jpg) no-repeat;background-size: cover;background-position: center;}
+    .weixin{width: 20vh;margin: 5% auto;position: relative;z-index: 5;}
+      .weixin img{width: 100%;height:100%;}
+    .welcome{font-size: 1.4em;margin: 10% 0;padding: 0 9%;}
+    .message{font-size: 0.8em;}
+      .message span{font-weight: 600;}
+
+#show{position:relative;margin:5% auto;animation-delay:0.1s;z-index: 5;}
+  .item{position:absolute;height:30px;width: 30px;background:#ddd;border:1px solid #eeeeee;cursor:pointer;border-radius: 50%;text-align: center;overflow: hidden;}
+    .item img{width: 100%;height: 100%;}
+
+#touch_drag{position: absolute; width: 100%; height: 100%; overflow: hidden; left: 0px; top: 0px; z-index: 9999; display: none; background-color: rgb(111, 145, 214);}
+  #touch_drag_cont{position: absolute; left: 50%; top: 50%; width: 230px; height: 150px; margin: -75px 0px 0px -125px; text-align: center; color: rgb(255, 255, 255);}
+  #touch_drag i{position: relative; display: block; width: 74px; height: 110px; margin: 0px auto; transform: rotate(-90deg); animation: TOUCH_DRAG_IPHONE 2.6s ease-in infinite;background: url(../img/touch_drag_iphone.png) 0px 0px / 100% no-repeat;}
+@keyframes TOUCH_DRAG_IPHONE{
+  0{-webkit-transform:rotate(-90deg);}
+  40%{-webkit-transform:rotate(0deg);}
+  60%{-webkit-transform:rotate(0deg);}
+  80%{-webkit-transform:rotate(-90deg);}
+  100%{-webkit-transform:rotate(-90deg);}
+}
+
