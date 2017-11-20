@@ -1,0 +1,217 @@
+/* CSS Document */
+
+	*{ margin:0px; padding:0px;}
+	a{ text-decoration:none;}
+	body{ font-size:14px; font-family:"宋体"; background-color:#010008;}
+	#header1_in{ z-index:3; width:1000px; margin:0px auto; height:80px; position:fixed; top:0px; left:50%; margin-left:-500px; background-color:#000; opacity:0.8;}
+		#header1_in h1{ float:left;}
+			#header1_in h1 img{ height:60px; position:absolute; top:10px;}
+		#header1_menu{ float:right;}
+			#header1_menu li { float:left; list-style:none;}
+			#header1_menu li a{ display:block; height:80px; width:100px; text-align:center; line-height:80px; text-decoration:none; color:#FFF;}
+			#header1_menu li:hover{ background-color:#000;opacity:0.5; font-weight:bold; }
+			#header1_menu li a b{ color:#FFF;}
+	
+	#header_in{ z-index:2; width:1000px; margin:0px auto; height:80px; position:relative;}
+		#header_in h1{ float:left;}
+			#header_in h1 img{ height:60px; position:absolute; top:10px;}
+		#header_menu{ float:right;}
+			#header_menu li { float:left; list-style:none;}
+			#header_menu li a{ display:block; width:100px; text-align:center; line-height:80px; text-decoration:none; color:#FFF;}
+			#header_menu li:hover{ background-color:#000;opacity:0.5; font-weight:bold; }
+			#header_menu li a b{ color:#FFF;}
+			
+	#bananer{ height:265px; background-image:url(../imager/index/banner_top.png); background-position:top center; position:relative; margin-bottom:30px; width:100%;}
+		.bananer_pic{ height:110px; width:110px; border: solid 4px #FFFFFF; border-radius:100%; float:right;  overflow:hidden;  position:absolute; left:80%; top:100px; margin-left:-55px;}
+			.bananer_pic a{background-image:url(../imager/index/bananer_pic.jpg); width:110px; display:block; height:110px; padding-top:75px;}
+				.bananer_pic a span{ display:block; height:35px; line-height:35px; color:#FFF; text-align:center; background-color:#000; transition: margin-top .2s ease-in-out; font-size:12px; margin-top:60px; opacity:0.6;}
+				.bananer_pic a:hover span{ display:block; margin-top:0px;}
+		.bananer_wen{ position:absolute; bottom:8px; left:50%; margin-left:-120px;}
+			.bananer_wen a{color:#FFF; display:block; height:20px; line-height:20px; width:240px; text-align:center;font-size:16px; margin-top:300px;}
+	#content_in{width:1000px; margin:0px auto; }
+	
+		#c_main{ width:720px; float:left;}
+			h2{background-image:url(../imager/index/tilte.jpg); background-repeat:repeat-x; background-position:center;}
+				h2 p{ height:30px; line-height:30px; font-family:"黑体"; width:100px; background-color:#010008; color:#FFF;}
+				h2 span{ color:#0FF;}
+	h3{ margin:10px 0px; height:25px; line-height:20px; border-bottom:solid 1px #FFFFFF;color:#FFF;}
+		.c_mian_in{ margin:30px 0px 50px;color:#FFF; background-color:#1F1F1F; padding:10px;} 
+			.c_mian_in a{ color:#FFF;}
+			.c_mian_in a:hover{ color:#0FF; text-decoration:underline;}
+		.c_mian_title{ margin-bottom:10px; height:140px;}
+			.c_mian_title img{ float:left; width:200px; height:130px; margin-right:20px; border:#FFF solid 2px;}
+			.c_mian_title p{ text-indent:2em; line-height:20px;}
+		.c_mian_time{ background:url(../imager/index/titile_time.png) #CCC no-repeat center left; height:20px; line-height:20px; color:#666;}
+			.c_mian_time span{ margin-left:20px;}
+			.c_mian_time span a{ color:#000;}
+			.c_mian_time span :hover{ color:#00F; text-decoration:underline;} 
+			.c_mian_time .read{ float:right; margin-right:20px; color:#000;}	
+			.c_mian_time .read:hover{ color:#00F; text-decoration:underline;}
+				
+		#c_sidebar{ width:260px; float:right;}
+			.c_sidebar_in{ padding-bottom:20px;}
+				.c_sidebar_in h4{ margin-bottom:10px; background:url(../imager/index/r_title_bg.jpg) repeat-x center left;}
+					.c_sidebar_in h4 p{ height:30px; line-height:30px; font-family:"黑体"; width:70px; background-color:#010008; color:#FFF;}
+						.c_sidebar_in h4 p span{ color:#0FF;}
+				.c_sidebar_in .c_sidebar_menu li{ list-style:none; line-height:25px; height:25px;}
+				.c_sidebar_in .c_sidebar_menu li a{ color:#FFF;}
+				.c_sidebar_in .c_sidebar_menu li a span{ margin-right:10px;}
+				.c_sidebar_in .c_sidebar_menu li:hover{ text-decoration:underline;}
+				#c_sidebar_in_1 li{ text-align:center;}
+			.c_sidebar_img{ text-align:center; padding:10px; }
+				.c_sidebar_img p{ color:#FFF; margin-bottom:10px; font-size:14px;}
+					.c_sidebar_img p span{ color:#0FF;}
+				.c_sidebar_img img{ width:90%;}
+	
+	.c_h2{ width:1000px; height:auto; margin:0px auto; margin-bottom:20px;}
+		.c_but{width:978px;height:260px;overflow:hidden;padding:10px;margin:0 auto;border:1px solid #FFF; position:relative;}
+			.c_but .c_but_left{height:100px;width:35px; background:url(../imager/index/c_two_l.png) no-repeat;overflow:hidden;float:left;display:inline;margin:80px 0 0 0;cursor:pointer; position:absolute;}
+			.c_but .c_but_right{height:100px;width:35px;background:url(../imager/index/c_two_r.png) no-repeat;overflow:hidden;float:left;display:inline;margin:80px 0 0 0;cursor:pointer; position:absolute; right:10px;}
+			.c_but .Cont{width:980px; overflow:hidden;float:left;}
+				.c_but .ScrCont{width:10000000px;}
+					.c_but .Cont .pic{width:246px;float:left;text-align:center;}
+						.c_but .Cont .pic img{padding:10px;background:#fff;border:1px solid #ccc;display:block;margin:0 auto;width:200px;height:180px;}
+					.c_but .Cont .pic div{line-height:20px;color:#505050;margin:15px 0px;}
+						.c_but .Cont .pic div span{display:block; margin-bottom:5px;}
+				.c_but .Cont a:link,.c_but .Cont a:visited{color:#626466;text-decoration:none;}
+			.c_but .Cont a:hover{color:#0FF;text-decoration:underline;}
+				.c_but #List1,.c_but #List2{float:left;}
+		
+	#footer{ background-color:#000;}
+	#footer_in{ color:#FFF; background-color:#000; padding-top:50px; margin:0px auto; width:1000px; text-align:center;}
+		#footer_in p{ font-size:16px; font-weight:800;padding:20px 0px; line-height:30px;}
+		#footer_in hr{ border:solid 1px #FFF; margin-bottom:5px;}
+		#footer_in h6{ margin:20px 0px;  float:left;}
+			.footer_menu { margin:20px 0px; float:right;}
+			.footer_menu li{ float:left; list-style:none;}
+			.footer_menu li a{ color:#FFF; width:65px; display:block;}
+			.footer_menu li:hover{ text-decoration:underline;}
+.clear{ clear:both;}
+
+#buttom{ position:fixed; right:15px; bottom:20px;}
+	#buttom a img{ width:40px;}
+
+
+@media (max-width:720px){
+body{ -webkit-transition:2s all;}
+#header1_in{ display:none;}
+#header_in{ width:100%; height:auto;}
+	#header_menu{ float:none;}
+		#header_menu li{ float:none; }
+			#header_menu li a{ width:100%; line-height:40px; height:40px; background:#000; border:#FFF solid 1px;}
+
+#bananer{ max-width:100%}
+	.bananer_pic{ left:50%;}
+		.bananer_pic a{ padding-top:15px;}
+
+#content_in{ width:100%}
+	#c_main{ width:100%; float:none;}
+	#c_sidebar{ max-width:100%; width:100%; float:none;}
+		.c_sidebar_in .c_sidebar_menu{ text-align:center;}
+			.c_sidebar_img img{ width:50%;}
+			
+.c_h2{ width:100%;}
+	.c_but{ max-width:90%;}
+			
+#footer_in{ max-width:100%;}		
+	#footer_in h6{ text-align:center; float:none;}
+	.footer_menu { float:none; max-width:100%; margin-left:20%;}
+		.footer_menu li{ width:10%;}
+			.footer_menu li a{ max-width:100%; width:5%; }
+			
+#buttom{ display:none;}
+/*学无止境分页面*/
+#study .study_pic{ max-width:100%;}
+#study .study_pic .study_menu{ max-width:100%; min-width:100%; width:80%;}
+#study .study_pic .study_menu li{ margin:0px auto; }
+}
+
+
+
+@media (max-width:480px){
+body{ -webkit-transition:2s all;}
+#header1_in{ display:none;}
+#header_in{ width:100%; height:auto;}
+	#header_menu{ float:none;}
+		#header_menu li{ float:none; }
+			#header_menu li a{ width:100%; line-height:40px; height:40px; background:#000; border:#FFF solid 1px;}
+
+#bananer{ max-width:100%}
+	.bananer_pic{ left:50%;}
+		.bananer_pic a{ padding-top:15px;}
+
+#content_in{ width:100%}
+	#c_main{ width:100%; float:none; height:auto;}
+	h3{ height:auto;}
+		.c_mian_in{ height:auto;}
+		.c_mian_title{ height:auto; margin:10px auto; width:100%; max-width:100%;}
+			.c_mian_title img{ float:none; margin-right:0px; margin-bottom:10px; max-width:100%; margin-left:20%;}
+			.c_mian_time{ height:auto; background: #CCC ;}
+	#c_sidebar{ max-width:100%; width:100%; float:none;}
+		.c_sidebar_in .c_sidebar_menu{ text-align:center;}
+			.c_sidebar_img img{ width:50%;}
+			
+.c_h2{ width:100%;}
+	.c_but{ max-width:90%;}
+			
+#footer_in{ max-width:100%;}		
+	#footer_in h6{ text-align:center; float:none;}
+	.footer_menu { float:none; max-width:100%; margin-left:20%;}
+		.footer_menu li{ width:10%;}
+			.footer_menu li a{ max-width:100%; width:5%; }
+
+#buttom{ display:none;}
+}
+
+
+/*碎言碎语分页面*/
+#wen #content_in #c_main #jiazhai { height:30px; line-height:30px; background-color:#333; text-align:center;}
+#wen #content_in #c_main #jiazhai a{ color:#000;}
+#wen #content_in #c_main #jiazhai a:hover{ color:#0FF; text-decoration:underline;}
+
+/*碎言碎语分页面-文章页面*/
+#wen_c .zhiying{ height:30px; line-height:30px; color:#FFF; background-color:#999; background:url(../imager/index/tilte.jpg) repeat-x center; margin:10px 0px;}
+	#wen_c .zhiying span{ background-color:#010008; padding:0px 20px; float:left;}
+		#wen_c .zhiying a{ color:#FFF;}
+			#wen_c .zhiying a:hover{ color:#0FF; text-decoration:underline;}
+			#wen_c .zhiying span b:hover{ color:#0FF;}
+#wen_c .zhiying_in{ padding:20px; background-color:#FFF;}
+#wen_c .zhiying_in h3{ text-align:center; color:#000; border-bottom:#000 1px solid;}
+#wen_c .zhiying_in p{ text-indent:2em; line-height:20px;}
+
+/*关于我分页面*/
+#about me .bananer_pic{left:50%;}
+
+
+/*学无止境分页面*/
+#study #content{ height:auto;}
+	#study #header1_in{ display:none;}
+	#study #content .c_h2{ margin-top:50px; margin-bottom:30px;}
+#study .study_pic{ width:960px; margin:0px auto; background-color:#FFF; padding:20px; margin-bottom:40px;}
+#study .study_pic .study_menu{ width:220px; float:left; margin:0px 10px;}
+#study .study_pic .study_menu li { list-style:none; border:solid #CCC 5px; width:200px; margin-bottom:20px; text-align:center;}
+#study .study_pic .study_menu li img{ width:200px;}
+#study .study_pic .study_menu li a span{ margin:10px 0px; color:#000; display:block;}
+#study .study_pic .study_menu li a :hover{ color:#00F; text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
