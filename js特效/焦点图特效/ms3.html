@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{margin:0px;padding:0px;}
+    ul li{list-style:none;}
+    
+    #banner{position:relative;width:490px;height:170px;margin:100px auto;}
+
+    #menu{width:490px;height:170px;margin:100px auto;position:relative;}
+    #menu li{position:absolute;left:0px;top:0px;display:none;}
+    #menu .hover{display:block;}
+    
+    #cut{position:absolute;right:0px;bottom:5px;}
+    #cut li{ height:10px; width:10px;background-color:#ccc;float:left;margin:0px 5px;cursor:pointer;}
+    #cut .ss{background-color:#000;}
+</style>
+</head>
+<body>
+    <div id="banner">
+        <ul id="menu">
+            <li class="hover"><img src="img/01.jpg" /></li>
+            <li><img src="img/02.jpg" /></li>
+            <li><img src="img/03.jpg" /></li>
+        </ul> 
+        <ul id="cut">
+            <li class="ss"></li>
+            <li class=""></li>
+            <li class=""></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var menu = document.getElementById('menu');
+    var lis = menu.getElementsByTagName('li');
+
+    var cut = document.getElementById('cut');
+    var lli = cut.getElementsByTagName('li');
+
+        var times;
+        var index = 0;
+        times=setInterval(auto,2000);
+
+        function auto(aa){
+            if(aa){
+                     index=aa;
+                     index++;
+                     index=index>2?index=0:index;
+               }else{
+                    index++;
+                    index=index>2?index=0:index;
+               }
+
+             for(var j=0;j<lis.length;j++){
+                lis[j].className='';
+                lli[j].className='';
+            }
+
+            lis[index].className='hover';
+            lli[index].className='ss';
+        }    
+
+        for(var i=0;i<lli.length;i++){
+            lli[i].ind=i;    
+            lli[i].onclick=function(){
+                clearInterval(times);
+                for(var o=0;o<lis.length;o++){
+                    lis[o].className='';
+                    lli[o].className='';
+                }
+                lis[this.ind].className='hover';
+                lli[this.ind].className='ss';
+                auto(this.ind-1);
+                times=setInterval(auto,2000);  
+            }
+        }
+
+
+
+</script>

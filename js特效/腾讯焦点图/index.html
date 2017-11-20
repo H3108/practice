@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>传说中的焦点图</title>
+<script type="text/javascript" src="images/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js.js"></script>
+<style>
+	*{padding:0px;margin:0px;}
+	#banner{width:680px;height:380px; overflow:hidden;margin:50px auto;position:relative;}
+	.ul{width:3400px;height:680px;-webkit-transition:all 0.3s;}
+	.ul .li{ list-style:none;float:left;width:680px;height:380px;position:relative;}
+	.ul .li img{width:680px;height:380px; cursor:pointer;}
+	.bg{width:680px;height:70px;background:rgba(0,0,0,0.7);position:absolute;bottom:0px;left:0px;z-index:5;}
+	.left{float:left;height:70px;width:45px;position:relative;}
+	.right{float:right;height:70px;width:45px;position:relative;}
+	.next{ background-image:url(images/icons_v8.png); background-position:-30px -90px;width:23px;height:45px;float:right;margin:12px; cursor:pointer;}
+	.pre{ background-image:url(images/icons_v8.png); background-position:0px -90px;width:23px;height:45px;float:left;margin:12px; cursor:pointer;}
+	.left:hover{background-position:-60px -90px; background:#408ED6;width:160px;}
+	.right:hover{background-position:-90px -90px; background:#408ED6;width:160px;}
+	h3{width:480px;position:absolute;bottom:35px;color:#fff;z-index:9;font-family:'黑体';font-weight:lighter; text-align:center;left:100px;}
+	.link{position:absolute;bottom:0px;width:480px;height:22px; z-index:8;left:100px;}
+	.link span{ background-image:url(images/icons_v8.png); background-position:-160px -90px;width:7px;height:7px; display:inline-block;float:left;margin:5px 5px; cursor:pointer;}
+	.link span:nth-child(1){margin-left:200px;}
+	.link .on{background-position:-170px -90px;}
+	.img{ cursor:pointer;}
+	.left .img{width:100px;height:56px;position:absolute;right:7px;top:7px;  display:none;}
+	.right .img{width:100px;height:56px;position:absolute;left:7px;top:7px;  display:none;}
+</style>
+</head>
+
+<body>
+	<div id="banner">
+    	<div class="link">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        	<div class="bg">
+            	<div class="left">
+                	<div class="pre"></div>
+                    <img src="" alt="img" class="img" />
+                </div>
+                <div class="right">
+                	<div class="next"></div>
+                    <img src="" alt="img" class="img" />
+                </div>
+            </div>
+	<ul class="ul">
+    	<li class="li">
+        	<img src="images/1.jpg" alt="img" />
+            <h3>马刺遭压哨绝杀负德国冠军 帕克砍28分</h3>
+        </li>
+        <li class="li">
+        	<img src="images/2.jpg" alt="img" />
+            <h3>马刺遭压哨绝杀负德国冠军 帕克砍29分</h3>
+        </li>
+        <li class="li">
+        	<img src="images/3.jpg" alt="img" />
+            <h3>马刺遭压哨绝杀负德国冠军 帕克砍30分</h3>
+        </li>
+        <li class="li">
+        	<img src="images/4.jpg" alt="img" />
+            <h3>马刺遭压哨绝杀负德国冠军 帕克砍31分</h3>
+        </li>
+        <li class="li">
+        	<img src="images/5.jpg" alt="img" />
+            <h3>马刺遭压哨绝杀负德国冠军 帕克砍32分</h3>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>

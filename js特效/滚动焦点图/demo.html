@@ -1,0 +1,39 @@
+<!DOCTYPE HTNL>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>焦点图</title>
+    <style>
+        *{ margin: 0px; padding: 0px;}
+        #banner{ width: 992px;height: 420px; margin: 100px auto;overflow: hidden; position:relative;}
+        #img{ width: 9999px;height: 420px; position:absolute; left:0px;top:0px; -webkit-transition:all 1s;}
+        #img img{ float:left;}
+    </style>
+    </head>
+    <body>
+        <div id="banner">
+            <div id="img">
+                <img src="img/1.jpg" />
+                <img src="img/2.jpg" />
+                <img src="img/3.jpg" />
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+   var index = 0;
+    var time;
+    var img = document.getElementById('img');   
+     
+    function banner(){
+        index++;
+        /*if(index>2){
+                index=0;
+        }
+        */
+    index=index>2?0:index;
+       // var img_left = img.offsetLeft;
+    img.style.left= -992 * index + 'px';
+    } 
+    time = setInterval(banner,2000 );
+</script>

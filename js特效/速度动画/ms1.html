@@ -1,0 +1,51 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8"> 
+    <title>速度动画</title>
+<style>
+*{ margin:0px;padding:0px;}
+#div1{ width:200px; height:200px; background:red; position:relative;left:-200px; top:0px;}
+#div1 span{ width:20px; height:50px; background:blue; position:absolute; left:200px; top:75px;}
+</style>
+</head>
+    <body>
+        <div id="div1">
+            <span>
+                分享
+            </span>
+        </div>
+    </body>
+</html>
+<script>
+var div=document.getElementById('div1');
+    window.onload=function(){
+        div.onmouseover=function(){
+            startMove();
+        }
+        div.onmouseout=function(){
+            startMove1();
+        }
+    }
+    var timer = null;
+function startMove(){
+     clearInterval(timer);
+    timer = setInterval(function(){
+        if(div.offsetLeft == 0){
+            clearInterval(timer);
+        }else{
+        div.style.left=div.offsetLeft+10+'px';
+        }
+    },30)
+}
+function startMove1(){
+     clearInterval(timer);
+    timer = setInterval(function(){
+        if(div.offsetLeft == -200){
+            clearInterval(timer);
+        }else{
+        div.style.left=div.offsetLeft-10+'px';
+        }
+    },30)
+}
+</script>

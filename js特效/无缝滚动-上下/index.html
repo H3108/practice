@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>无缝滚动-上下</title>
+</head>
+	<style>
+	*{margin:0; padding:0;}
+	body{
+		font-family:"微软雅黑";
+	}
+	a{color:#000;text-decoration:none;}
+	ul li{list-style:none;}
+	ul li :hover{color:red;}
+	.warp{
+		margin:0px auto;
+		width:400px;
+		height:300px;
+		border-radius:20px;
+		border:5px solid #ccc;
+		box-shadow:5px 5px 5px #ccc;
+		background:#D84C5C;
+		position:relative;
+	}
+	h3{
+		color:#fff;
+		position:absolute;
+		left:35px;
+		top:25px;
+	}
+	span{
+		color:#fff;
+		font-size:12px;
+		font-weight:600;
+		position:absolute;
+		top:40px;
+		right:10px;
+	}
+	#bot{
+		height:220px;
+		width:100%;
+		background:#fff;
+		position:absolute;
+		left:0px;
+		bottom:0px;
+		overflow:hidden;
+	}
+	#mo1,#mo2{
+		width:300px;
+		text-align:center;
+		line-height:25px;
+		margin:0px auto;
+	}
+
+	</style>
+<body>
+	<div class="warp">
+		<h3>慕课网最新课程</h3>
+		<span>更多>></span>
+		<div id="bot">
+			<ul id="mo1">
+				<li><a href="#">1无缝滚动就是这样子</a></li>
+				<li><a href="#">2无缝滚动就是这样子</a></li>
+				<li><a href="#">3无缝滚动就是这样子</a></li>
+				<li><a href="#">4无缝滚动就是这样子</a></li>
+				<li><a href="#">5无缝滚动就是这样子</a></li>
+				<li><a href="#">6无缝滚动就是这样子</a></li>
+				<li><a href="#">7无缝滚动就是这样子</a></li>
+				<li><a href="#">8无缝滚动就是这样子</a></li>
+				<li><a href="#">9无缝滚动就是这样子</a></li>
+			</ul>
+			<ul id="mo2">
+				<li><a href="#">1无缝滚动就是这样子</a></li>
+				<li><a href="#">2无缝滚动就是这样子</a></li>
+				<li><a href="#">3无缝滚动就是这样子</a></li>
+				<li><a href="#">4无缝滚动就是这样子</a></li>
+				<li><a href="#">5无缝滚动就是这样子</a></li>
+				<li><a href="#">6无缝滚动就是这样子</a></li>
+				<li><a href="#">7无缝滚动就是这样子</a></li>
+				<li><a href="#">8无缝滚动就是这样子</a></li>
+				<li><a href="#">9无缝滚动就是这样子</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+	<script>
+	var bot = document.getElementById("bot");
+	var mo1 = document.getElementById("mo1");
+	var mo2 = document.getElementById("mo2");
+
+	bot.scrollTop = 0;
+	mo1.innerHTML = mo2.innerHTML;
+	var times = 50;
+
+	function move(){
+		if(bot.scrollTop>=mo1.offsetHeight){
+			bot.scrollTop = 0;
+		}else{
+			bot.scrollTop++;
+		}
+	}
+
+	var movetimes = setInterval('move()',times);
+
+	 bot.onmouseover = function(){
+	 	clearInterval(movetimes);
+	}
+	bot.onmouseout = function(){
+		movetimes = setInterval('move()',times);
+	}
+
+	</script>

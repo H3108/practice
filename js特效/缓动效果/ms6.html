@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+*{margin:0px;padding:0px;}
+ul li{list-style:none;}
+#bann{margin:100px auto;width:490px;height:170px;overflow:hidden;position:relative;}
+#menu{width:9999px;position:absolute;top:0px;left:-490px;}
+#menu li{float:left;height:490px;}
+
+#but{position:absolute;bottom:5px;right:5px;}
+#but li{float:left;margin:auto 5px;width:20px;width:20px;text-align:center; border-radius:10px;background:#7DF7E4;cursor:pointer;}
+</style>
+</head>
+<body>
+    <div id="bann">
+        <ul id="menu">
+            <li><img src="img/01.jpg" /></li>
+            <li><img src="img/02.jpg" /></li>
+            <li><img src="img/03.jpg" /></li>
+            <li><img src="img/04.jpg" /></li>
+            <li><img src="img/05.jpg" /></li>
+        </ul>
+        <ul id="but">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var but = document.getElementById('but');
+    var ali = but.getElementsByTagName('li');
+    var menu = document.getElementById('menu');
+    var t2;
+
+
+
+    for(var i=0;i<ali.length;i++){
+            ali[i].ind = i;
+        ali[i].onclick = function(){
+            // menu.style.left = this.ind * -490 +"px";
+            clearInterval(t2);
+            var tag = this.ind * -490;
+            t2=setInterval(function(){
+                move2(menu,tag );
+            },50);   
+        }
+    }
+
+
+
+    function move2(e,tag){
+        var speed = (tag-e.offsetLeft)/10;
+
+  /*     if(speed>0){
+            speed=Math.ceil(speed);
+        }else{
+            speed=Math.floor(speed);
+        }
+*/
+        speed = speed>0?Math.ceil(speed):Math.floor(speed);
+
+        e.style.left = e.offsetLeft +speed +"px";
+
+         document.title = e.offsetLeft+"|"+speed;
+    }
+
+
+</script>

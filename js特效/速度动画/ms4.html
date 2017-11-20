@@ -1,0 +1,43 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8"> 
+    <title>多物体运动</title>
+<style>
+*{ margin:0px;padding:0px;}
+#div1{height:200px;border:1px solid #000; background:red;}
+</style>
+</head>
+    <body>
+        <div id="div1" style="width:200px;">干酪</div>
+    </body>
+</html>
+<script>
+window.onload=function(){
+        startMove();
+                        };
+function startMove(){
+
+setInterval(function(){
+    var oDiv=document.getElementById('div1');
+// offsetWidth获取的是它整个的宽度：包括内容宽度和边框等等
+// oDiv.style.width=oDiv.offsetWidth-1+'px';
+
+// 当把样式写在行内时，可以通过如下方法获取
+// oDiv.style.width=parseInt(oDiv.style.width)-1+'px';
+
+// 当不把样式写在行内是，可以通过getStyle函数获取
+    oDiv.style.width=parseInt(getStyle(oDiv,'width'))-1+'px';
+    oDiv.style.fontSize=parseInt(getStyle(oDiv,'font-size'))-1+'px';
+},30) }
+// getStyle函数是一个封装好的用来获取样式的函数
+function getStyle(obj,attr){
+// currentStyle:针对IE浏览器
+if(obj.currentStyle){
+return obj.currentStyle[attr]; }
+else{
+// getComputedStyle:针对Firefox浏览器
+return getComputedStyle(obj,false)[attr];
+} }
+</script>
+<!--<div id="div1" style="width: 200px">-->

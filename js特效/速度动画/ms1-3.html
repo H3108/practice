@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8"> 
+    <title>速度动画</title>
+<style>
+*{ margin:0px;padding:0px;}
+#div1{ width:200px; height:200px; background:red; position:relative;left:-200px; top:0px;}
+#div1 span{ width:20px; height:50px; background:blue; position:absolute; left:200px; top:75px;}
+</style>
+</head>
+    <body>
+        <div id="div1">
+            <span>
+                分享
+            </span>
+        </div>
+    </body>
+</html>
+<script>
+var div=document.getElementById('div1');
+    window.onload=function(){
+        div.onmouseover=function(){
+            startMove(0);
+        }
+        div.onmouseout=function(){
+            startMove(-200);
+        }
+    }
+    var timer = null;
+function startMove( iTarget){
+     clearInterval(timer);
+    timer = setInterval(function(){
+        var speed = (iTarget-div.offsetLeft)/20;
+        /*div.offsetLeft这个数值一直在改变，因为speed等于
+        (iTarget-div.offsetLeft)/20这个值，之后，div.offsetLeft一秒就减少了一次，
+        再执行这个是div.offsetLeft就少了一秒的距离。所以产生了缓冲的速度*/
+        speed=speed>0?Math.ceil(speed):Math.floor(speed);
+        //如果速度是正的 则向上取整。速度是负的向下取整
+        if(div.offsetLeft == iTarget){
+            clearInterval(timer);
+        }else{
+        div.style.left=div.offsetLeft+speed+'px';
+        }
+    },30)
+}
+</script>

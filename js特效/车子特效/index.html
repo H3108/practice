@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{margin:0px;padding:0px;}
+    img{margin:50px auto;height:150px;position:absolute;left:0px;}
+    #c1{top:250px;}
+</style>
+</head>
+<body>
+    <img id="c1" src="img/Porsche_3.jpg" />
+    <img id="c2" src="img/volkswagen_5.jpg"/>
+</body>
+</html>
+<script>
+    var c1 = document.getElementById('c1');
+    var c2 = document.getElementById('c2');
+
+    var t1;
+    var t2;
+
+    function move(e,speed,tag){
+
+        e.style.left = e.offsetLeft + speed + "px";
+        if(e.offsetLeft >= tag){
+            clearInterval(t1);
+        }
+    }
+    
+    function move1(e,tag){
+        var speed=(tag-e.offsetLeft)/10;
+        e.style.left = e.offsetLeft + Math.ceil(speed) + "px";
+
+    }
+
+
+    t1 = setInterval(function(){
+        move(c1,10,3000)
+    },50);
+
+
+    t2 = setInterval(function(){
+        move1(c2,3000)
+    },50);
+
+
+</script>

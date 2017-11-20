@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>炫酷banner</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+*{ margin:0px;padding:0px;}
+body{background-color:#999;}
+#banner{ width:500px;height:300px; margin:100px auto;position:relative;}
+#banner img{ height:300px;width:500px; border:10px solid #fff; box-shadow:0px 0px 0px #ccc;position:absolute;opacity:0.5;-webkit-transition:all 1s;}
+#banner .mid{left:0px;opacity:1;z-index:2;}
+#banner .right{ left:350px;-webkit-transform:rotate(5deg)scale(0.8);}
+#banner .left{ left:-350px;-webkit-transform:rotate(-5deg)scale(0.8);}
+</style>
+</head>
+<body>
+        <div id="banner">
+            <img src="img/1.jpg" class="mid" />
+            <img src="img/2.jpg" class="right"/>
+            <img src="img/3.jpg" class="left"/>
+        </div>
+</body>
+</html>
+<script>
+    function xuan(data){
+        $return = document.querySelectorAll(data);
+        if($return.length > 1){    /*  $('div')[1]   */
+            return $return;
+        }else{
+            return $return[0];
+        }
+    }
+
+    
+
+
+
+
+
+
+
+   
+    var index = 0;
+    var time;
+
+    time = setInterval(banner_function,1000);
+
+    function banner_function(){
+        index++;
+        index = index>2?0:index;
+
+        left = index - 1; /*  2 */
+        if(left<0){
+            left = 2;
+        }
+        right = index + 1;   /*  1 2 0 */
+        if(right>2){
+            right = 0;
+        }
+
+    xuan('#banner img')[index].className = "mid";
+    xuan('#banner img')[left].className = "left";
+    xuan('#banner img')[right].className = "right";
+  }  
+
+  
+
+
+</script>

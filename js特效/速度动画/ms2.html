@@ -1,0 +1,56 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8"> 
+    <title>速度动画</title>
+<style>
+*{
+     margin:0px;
+     padding:0px;
+ }
+#div1{ 
+    width:200px; 
+    height:200px;
+     background:red; 
+     opacity:0.3; /* 针对除了ie之外的其他标准浏览器 */ 
+     filter:alpha(opacity:30);/*针对ie*/
+    }
+</style>
+</head>
+    <body>
+        <div id="div1">
+        </div>
+    </body>
+</html>
+<script>
+    window.onload = function(){
+        var div = document.getElementById('div1');
+        div.onmouseover = function(){
+            startMove(100);
+        }
+        div.onmouseout = function(){
+            startMove(30);
+        }
+    }
+    var timer = null;
+    var alpha = 30;
+function startMove( iTarget){
+     var div = document.getElementById('div1');
+     clearInterval(timer);/*清除定时器叠加问题*/
+    timer = setInterval(function(){
+        var speed = 0;
+        if(alpha > iTarget){
+            speed = -10;
+        }else{
+            speed = 10;
+        }
+        if(alpha==iTarget){
+            clearInterval(timer);
+        }else{
+            alpha += speed;
+            div.style.filter='alpha(opacity:'+alpha+')';
+            div.style.opacity=alpha/100;
+        }
+    },30)
+}
+</script>

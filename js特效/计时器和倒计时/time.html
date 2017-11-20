@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="show"></div>
+</body>
+</html>
+<script>
+
+window.onload = function(){
+	onloadime();
+}
+function sum(i){
+	if(i<10){
+		i = "0"+i
+	}return i;	
+}
+function onloadime(){
+	var mydate = new Date();
+	var year = mydate.getFullYear();
+	var month = mydate.getMonth()+1;
+	var date = mydate.getDate();
+	
+	var week = new Array(7);
+	week[0] = "星期天";
+	week[1] = "星期一";
+	week[2] = "星期二";
+	week[3] = "星期三";
+	week[4] = "星期四";
+	week[5] = "星期五";
+	week[6] = "星期六";
+	var d = mydate.getDay();
+	
+	
+	var h = mydate.getHours();
+	var m = mydate.getMinutes();
+	var s = mydate.getSeconds();
+	m = sum(m);
+	s = sum(s);
+	
+	document.getElementById("show").innerHTML = (year+"年"+month+"月"+date+"日"+"&nbsp;&nbsp;"+week[d]+h+"时"+m+"分"+s+"秒");
+	
+	setTimeout(onloadime,500);
+}
+
+	
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<style>
+    *{padding:0px;margin:0px;}
+    ul,li{list-style:none;}
+    #ban{margin:100px auto;width:490px;height:170px; overflow:hidden;position:relative;border:#000 solid 5px;}
+    #menu{position:absolute;left:0px;width:9999px;}
+    #menu li{float:left;}
+</style>
+<body>
+    <div id="ban">
+        <ul id="menu">
+            <li><img src="img/01.jpg" /></li>
+            <li><img src="img/02.jpg" /></li>
+            <li><img src="img/03.jpg" /></li>
+            <li><img src="img/04.jpg" /></li>
+            <li><img src="img/01.jpg" /></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var ban = document.getElementById('ban');
+    var menu = document.getElementById('menu');
+    var times;
+
+    function move(speed){
+
+        menu.style.left = menu.offsetLeft - speed +'px';
+        if(menu.offsetLeft <= -1960){
+                menu.style.left = 0+"px";
+        }
+    }
+        times=setInterval(function(){
+            move(10);
+        },100);
+
+        ban.onmouseover=function(){
+            clearInterval(times);
+        }
+
+        ban.onmouseout=function(){
+            times=setInterval(function(){
+            move(10);
+        },100);
+        }
+</script>

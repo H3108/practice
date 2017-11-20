@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+    <title>返回顶部</title>
+<style>
+*{ margin:0px;padding:0px;}
+#bo{background-color:#333; height:3000px;}
+#but.but1{ width:100px;height:100px;background-color:blue; position:fixed;right:20px;bottom:20px;display:none;}
+#but.but2{ width:100px;height:100px;background-color:blue; position:fixed;right:20px;bottom:20px;display:block;}
+</style>
+</head>
+    <body>
+    <div id="bo">
+        <div id="but" class="but1">
+        </div>    
+    </div>
+    </body>
+</html>
+<script>
+    var but=document.getElementById("but");
+
+    document.onscroll = function(){
+        but_onscrolltop();
+    } 
+
+    but.onclick = function(){
+        but_onclick();
+    }
+
+function but_onscrolltop (){
+    var but_top = document.body.scrollTop;
+     if(but_top>1500){
+            but.className="but2"; 
+    }else{
+            but.className="but1";
+    }
+}
+
+function but_onclick (){
+    var time;
+    time = setInterval(
+        function(){
+            var but_top = document.body.scrollTop;
+            document.body.scrollTop = Math.floor(but_top - 20);
+            if(but_top == 0){
+                    clearInterval(time);
+            }
+        }
+    ,30);
+
+
+}
+</script>

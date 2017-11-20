@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta content="text/html" http-equiv="content" charset="utf-8">
+    <title>
+        无缝滚动
+    </title>
+    <style>
+    *{ margin:0px;padding:0px;}
+    ul li{ list-style:none;}
+    #banner{ height:380px; width:600px; margin:100px auto; background:#000;overflow:hidden;position:relative;}
+    #menu{ width:9999px;position:absolute;left:0px;}
+    #menu li{ float:left; }
+    </style>
+    </head>
+    <body>
+        <div id="banner">
+                <ul id="menu">
+                    <li><img src="img/1.jpg" /></li>
+                    <li><img src="img/2.jpg" /></li>
+                    <li><img src="img/3.jpg" /></li>
+                    <li><img src="img/1.jpg" /></li>
+                </ul>
+        </div>
+    </body>
+</html>
+<script>
+    var menu = document.getElementById('menu');
+
+
+    var time;
+    time = setInterval(banner,30)
+
+
+     function banner(){
+        //var menu_left = menu.offsetLeft;
+        menu.style.left = menu.offsetLeft - 5 +"px";
+        if(menu.offsetLeft==-2040){
+            menu.style.left = 0+"px";
+        }
+    }
+
+
+
+     menu.onmouseover = function(){
+            clearInterval(time);
+     }
+     menu.onmouseout = function(){
+         time = setInterval(banner,30);
+          
+     }
+
+     
+</script>

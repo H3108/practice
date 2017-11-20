@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>无缝滚动-上下</title>
+</head>
+	<style>
+	*{margin:0; padding:0;}
+	body{
+		font-family:"微软雅黑";
+	}
+	
+	ul li{list-style:none;}
+	ul li :hover{color:red;}
+	#warp{
+		margin:0px auto;
+		width:400px;
+		height:100%;
+		margin-top:10px;
+	}
+	.head{
+		height:80px;
+		-webkit-border-top-left-radius:20px;
+		-webkit-border-top-right-radius:20px;
+		box-shadow:5px 5px 5px #ccc;
+		background:#D84C5C;
+		position:relative;
+	}
+	h3{
+		color:#fff;
+		position:absolute;
+		left:35px;
+		top:25px;
+	}
+	span{
+		color:#fff;
+		font-size:12px;
+		font-weight:600;
+		position:absolute;
+		top:40px;
+		right:10px;
+	}
+	#bot{
+		height:300px;
+		width:400px;
+		margin:0px auto;
+		background:#fff;
+		overflow:hidden;
+		background: #ccc;
+		-webkit-border-bottom-left-radius:20px;
+		-webkit-border-bottom-right-radius:20px;
+		box-shadow:5px 5px 5px #ccc;
+	}
+	ul{
+		width:100%;
+		text-align:center;
+		margin:0px auto;
+		line-height:30px;
+		height:300px;
+	}
+	ul li{
+		height:30px;
+
+	}
+	ul li a{
+		color:#000;
+		text-decoration:none;
+		height: 30px;
+	}
+	</style>
+<body>
+<div id="warp">
+	<div class="head">
+		<h3>慕课网最新课程</h3>
+		<span>更多>></span>
+	</div>
+		<div id="bot">
+			<ul>
+				<li><a href="#">1无缝滚动就是这样子</a></li>
+				<li><a href="#">2无缝滚动就是这样子</a></li>
+				<li><a href="#">3无缝滚动就是这样子</a></li>
+				<li><a href="#">4无缝滚动就是这样子</a></li>
+				<li><a href="#">5无缝滚动就是这样子</a></li>
+				<li><a href="#">6无缝滚动就是这样子</a></li>
+				<li><a href="#">7无缝滚动就是这样子</a></li>
+				<li><a href="#">8无缝滚动就是这样子</a></li>
+				<li><a href="#">9无缝滚动就是这样子</a></li>
+				<li><a href="#">10无缝滚动就是这样子</a></li>
+			</ul>
+		</div>
+</div>
+</body>
+</html>
+
+
+	<script>
+/*		var bot = document.getElementById("bot");
+		//bot.innerHTML +=bot.innerHTML;
+		var ul = bot.getElementsByTagName("ul")[0];
+		var tops = 0;
+		var time;
+		time = setInterval(row,10);
+
+		function row(){
+			//var now_top = ul.offsetTop;
+			var aa = tops--;
+			ul.style.top = aa+'px';
+			if(now_top % 30  == 0){
+				clearInterval(time);
+				setTimeout("row()",2000);
+			}
+		}*/
+/*	var bot = document.getElementById("bot");
+	bot.innerHTML += bot.innerHTML;
+	bot.scrollTop = 0;
+	var times;
+	var liheight = 30;
+	function move(){
+		times=setInterval('scrollup()',50);
+		bot.scrollTop++;
+	}
+	function scrollup(){
+		if(bot.scrollTop % liheight == 0){
+			clearInterval(times);
+			setTimeout(move,2000);
+		}else{													
+			bot.scrollTop++;
+			if(bot.scrollTop >= bot.scrollHeight/2){
+				bot.scrollTop = 0;
+			}
+		}
+	}
+	setInterval(move,2000);*/
+
+
+	 var bot = document.getElementById('bot');
+	 var iliHeight = 30;//单行滚动的高度
+	 var speed = 50;//滚动的速度
+	 var time;
+	 var delay= 2000;
+	 bot.scrollTop=0;
+	 bot.innerHTML+=bot.innerHTML;//克隆一份一样的内容
+	 function startScroll(){
+		 time=setInterval("scrollUp()",speed);
+		 bot.scrollTop++;
+		 }
+	 function scrollUp(){
+		 if(bot.scrollTop % iliHeight==0){
+			 clearInterval(time);
+			 setTimeout(startScroll,delay);
+			 }else{
+				 bot.scrollTop++;
+				 if(bot.scrollTop >= bot.scrollHeight/2){
+					 bot.scrollTop =0;
+					 }
+				 }
+		 }
+		 setTimeout(startScroll,delay)
+	</script>
