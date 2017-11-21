@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+<style type="text/css" media="screen">
+*{margin: 0;padding:0 }	
+#ont{height: 477px;margin: 0 auto;border-right: 1px solid #ccc;border-bottom:1px solid #ccc;overflow: hidden;position: relative;}
+#ont img{position: absolute;left: 0;border-left: 1px solid #ccc;display: block;}
+</style>
+</head>
+<body>
+<div id="ont">
+	<img src="images/door1.png" alt="1080P神器" title="1080P神器" />
+	<img src="images/door2.png" alt="5.5寸四核" title="5.5寸四核" />
+	<img src="images/door3.png" alt="四核5寸" title="四核5寸" />
+	<img src="images/door4.png" alt="5.7寸机皇" title="5.7寸机皇" />
+</div>
+</body>
+</html>
+<script>
+	window.onload = function(){
+		//获取DOM
+		var box = document.getElementById('ont');
+		var imgs = box.getElementsByTagName('img');
+
+		//获取显示图片的宽度和隐藏的图片的宽度
+		var imgWidth = imgs[0].offsetWidth;
+		var exWidth = 160;
+
+		//给最外层的容器设置一个宽度
+		var boxWidth = imgWidth + (imgs.length-1)*exWidth;
+		box.style.width = boxWidth + "px";
+
+		//设置每张图片的所在位置
+		function setimg(){
+			for(var i=1,len=imgs.length;i<len;i++){
+				imgs[i].style.left = imgWidth + exWidth * (i - 1) + 'px';
+			}
+		}
+		setimg();
+
+		//每张隐藏的图要滑动的距离
+		var twidth = imgWidth - exWidth;
+
+		//每张图的滑动效果
+		for(var i=0,len=imgs.length;i<len;i++){
+			//立即调用
+			(function(i){
+				imgs[i].onmouseover = function(){
+					//图片复位
+					setimg();
+					//除去第一张不需要减去twidth（滑动距离），其他都要
+					for (var j = 1; j <= i; j++){
+						imgs[j].style.left = parseInt(imgs[j].style.left,10) - twidth +"px";
+					};
+				}
+			})(i);
+		}
+
+		
+	}
+</script>
